@@ -1,0 +1,63 @@
+<h2>Dashboard Child is Working.</h2>
+
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+<!-- login form -->
+<form class="example-form" [formGroup]="emailFormControl" (ngSubmit)="onSubmit"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label >Email</mat-label>
+      <input formControlName="email" type="email" matInput
+             placeholder="Ex. pat@example.com" #e required />
+             <!-- <mat-error>
+                Please enter a valid email address
+              </mat-error> -->
+      <!-- <mat-hint style="color:red">{{a}}</mat-hint> -->
+      <!-- <mat-error>
+        Please enter a valid email address
+      </mat-error> -->
+      <mat-error *ngIf="emailFormControl.invalid">email is Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>PASSWORD</mat-label>
+        <input formControlName="password" type="password" matInput
+               placeholder="Ex. abc@1234" #p required>
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="emailFormControl.invalid">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field> 
+
+      <div class="example-label"></div>
+    <div class="example-button-row">
+     
+      <button mat-button color="primary" (click)="getData(e.value, p.value)">login</button>
+      
+    </div>
+ 
+  </form>
+<br>
+<h3>Email ---------->  {{data2.Email}}</h3>
+<h3>Password ---------->  {{data2.Password}}</h3>
+
+<br>
+<br>
+
+
+<!-- table -->
+
+<table>
+    <tr>
+      <th>No.</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>{{data2.Email}}</td>
+      <td>{{data2.Password}}</td>
+    </tr>
+    
+    
+</table>
+  
